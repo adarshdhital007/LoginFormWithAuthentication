@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate, Link } from 'react-router-dom'; // Import useNavigate and Link
-import Success from '../../components/success/Success';
 import axios from 'axios';
-import SignUpForm from '../signup/SignUpForm';
+
 
 function Form() {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -15,7 +14,7 @@ function Form() {
 
     try {
       // Send a POST request to your backend's login endpoint
-      const response = await axios.post('http://localhost:5000/api/auth/login', {
+      const response = await axios.post('https://loginformwithauthentication.onrender.com/api/auth/login', {
         email,
         password,
       });
@@ -26,10 +25,10 @@ function Form() {
       // Store the token in local storage or a cookie for future API requests
       localStorage.setItem('token', token);
 
-      // Redirect to the success page or perform other actions
+      // Redirect to the success page 
       navigate('/success');
     } catch (error) {
-      // Handle authentication failure (e.g., show an error message)
+      // Handle authentication 
       console.error('Authentication failed:', error);
     }
   };

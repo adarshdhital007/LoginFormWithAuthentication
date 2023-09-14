@@ -1,9 +1,13 @@
+import React from 'react';
+
 function Success() {
-    return <div class='bg-emerald-100 items-center justify-center min-h-screen flex'>
-        <h1 class='text-3xl  bg-emerald-500'>
-            Success
-        </h1>
-    </div>;
+    return (
+        <div className='bg-emerald-100 h-screen flex items-center justify-center'>
+            <h1 className='text-5xl bg-emerald-500 text-white p-4 rounded-lg'>
+                You are successfully logged in <span className='animate-pulse'>❤️</span>
+            </h1>
+        </div>
+    );
 }
 
 export default Success;
